@@ -127,7 +127,6 @@ class BalloonDataset(utils.Dataset):
             # shape_attributes (see json format above)
             # The if condition is needed to support VIA versions 1.x and 2.x.
             if type(a['regions']) is dict:
-            #if not true:
                 polygons = [r['shape_attributes'] for r in a['regions'].values()]
             else:
                 polygons = [r['shape_attributes'] for r in a['regions']] 
