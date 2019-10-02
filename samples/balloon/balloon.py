@@ -121,6 +121,7 @@ class BalloonDataset(utils.Dataset):
 
         # Add images
         for a in annotations:
+            print(a)
             # Get the x, y coordinaets of points of the polygons that make up
             # the outline of each object instance. These are stores in the
             # shape_attributes (see json format above)
