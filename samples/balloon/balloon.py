@@ -111,7 +111,7 @@ class BalloonDataset(utils.Dataset):
         # Note: In VIA 2.0, regions was changed from a dict to a list.
         annotations = json.load(open(os.path.join(dataset_dir, "via_region_data.json")))
         annotations = list(annotations.values())  # don't need the dict keys
-
+        printf (annotations)
         # The VIA tool saves images in the JSON even if they don't have any
         # annotations. Skip unannotated images.
         # annotations = [a for a in annotations if a['regions']]
@@ -122,8 +122,8 @@ class BalloonDataset(utils.Dataset):
             # the outline of each object instance. These are stores in the
             # shape_attributes (see json format above)
             # The if condition is needed to support VIA versions 1.x and 2.x.
-            #if type(a['regions']) is dict:
-            if not true:
+            if type(a['regions']) is dict:
+            #if not true:
                 polygons = [r['shape_attributes'] for r in a['regions'].values()]
             else:
                 polygons = [r['shape_attributes'] for r in a['regions']] 
