@@ -111,11 +111,9 @@ class BalloonDataset(utils.Dataset):
         # Note: In VIA 2.0, regions was changed from a dict to a list.
         annotations = json.load(open(os.path.join(dataset_dir, "via_region_data.json")))
         # 
-        parsed = json.loads(annotations)
-        print(json.dumps(parsed, indent=4, sort_keys=True))
         #
         annotations = list(annotations.values())  # don't need the dict keys
-        print(json.dumps(annotations, indent=4))
+        print(annotations)
         
         # The VIA tool saves images in the JSON even if they don't have any
         # annotations. Skip unannotated images.
