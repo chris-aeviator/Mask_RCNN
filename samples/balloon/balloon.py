@@ -117,7 +117,6 @@ class BalloonDataset(utils.Dataset):
         annotations = list(annotations.values())  # don't need the dict keys
         print(json.dumps(annotations, indent=4))
         
->>> print json.dumps(parsed, indent=4, sort_keys=True)
         # The VIA tool saves images in the JSON even if they don't have any
         # annotations. Skip unannotated images.
         # annotations = [a for a in annotations if a['regions']]
